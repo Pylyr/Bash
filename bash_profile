@@ -19,7 +19,7 @@ echo "You can also change the password"
 echo "Using '/recovery' command in 'guest' mode"
 echo "#################################################"
 read pass
-if [[ "$(/hash $pass)" = "649b9c4f6931a6d274d0309eddb6da50fbcc92c9" ]]
+if [[ "$(/hash $pass)" = "adc83b19e793491b1c6ea0fd8b46cd9f32e592fc" ]] 
 then
 reset
 break
@@ -125,7 +125,7 @@ bar=########
 bar=##########
 ;;
 *)
-bar=
+bar=""
 esac
 done
 }
