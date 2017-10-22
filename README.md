@@ -5,3 +5,4 @@
  It has some cool features like: /rain; /weather; /stopwatch... 
  Bascially, small scipts which I joined in one and they are all available in terminal prompt.
  
+Mark Daychman
