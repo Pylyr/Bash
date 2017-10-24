@@ -14,18 +14,9 @@ echo "#################################################"
 echo "Welcome to S–Terminal OS!"|lolcat
 echo "Enter the password:"
 echo "$tries tries left"
-echo "(Type 'guest' to enter regular Terminal window)"
-echo "You can also change the password"
-echo "Using '/recovery' command in 'guest' mode"
 echo "#################################################"
 read pass
-if [[ "$(/hash $pass)" = "adc83b19e793491b1c6ea0fd8b46cd9f32e592fc" ]] 
-then
-reset
-break
-fi
-a=$(cat '/Users/markdaychman/.S-Terminal.txt')
-if [[ "$(/hash $pass)" = "$a" ]]
+if [[ "$(/hash $pass)" = "ab614707929a4f682fcc9da79e1620129c2a71d3" ]] #Set-up your password using /hash your_password and pasting the hash in the conditional operation
 then
 #####Start of S–Terminal#####
 access=1
@@ -125,7 +116,7 @@ bar=########
 bar=##########
 ;;
 *)
-bar=""
+bar=
 esac
 done
 }
@@ -662,48 +653,4 @@ exit
 fi
 done
 
-/recovery () {
-a=$(cat '/Users/markdaychman/.S-Terminal.txt')
-if [[ "$#" != "3" ]]
-then
-echo "Usage: /recovery old_pass new_pass new_pass"
-elif [[ "$(/hash $1)" = "$a" ]]
-then
-if [[ "$2" = "$3" ]]
-then
-b=$(/hash $2)
-echo "$b" > /Users/markdaychman/.S-Terminal.txt
-echo "Password have been changed!"
-cd "$HOME"
-rm -R .bash_sessions
-rm -R .bash_history
-rm -R .logt
-echo "Logs cleared"
-echo "Terminal re-boots in... 3"
-sleep 1
-echo "Terminal re-boots in... 2"
-sleep 1
-echo "Terminal re-boots in... 1"
-sleep 1
-killall Terminal
-else
-echo "Passwords are not the same!"
-fi
-else
-echo "Password is incorrect!"
-fi
-}
-
-##
-# Your previous /Users/markdaychman/.bash_profile file was backed up as /Users/markdaychman/.bash_profile.macports-saved_2017-10-19_at_14:49:49
-##
-
-# MacPorts Installer addition on 2017-10-19_at_14:49:49: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-# Finished adapting your PATH environment variable for use with MacPorts.
-
-
-# MacPorts Installer addition on 2017-10-19_at_14:49:49: adding an appropriate MANPATH variable for use with MacPorts.
-export MANPATH="/opt/local/share/man:$MANPATH"
-# Finished adapting your MANPATH environment variable for use with MacPorts.
 
